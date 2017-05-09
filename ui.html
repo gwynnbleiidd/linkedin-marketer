@@ -1,34 +1,34 @@
 <div style="width: 300px;position: fixed; bottom: 0; right: 0;padding:20px;z-index: 9999999;background-color: #fff">
     <select name="endMonth" id="moduleSelector" class="ember-view">
-      <option value="1">Connect new contacts</option> 
-      <option value="2">Broadcast Message</option>
-      <option value="3">Extract Emails from List</option>
-      <option value="4">Lists</option>
+      <option value="1">Подключить новые контакты</option> 
+      <option value="2">Трансляция сообщений</option>
+      <option value="3">Изъять почты из списка</option>
+      <option value="4">Список</option>
     </select>
-    <p class="flow-text">Status: <span id="Status" style="color:#cc0000">Initializing</span></p>
+    <p class="flow-text">Status: <span id="Status" style="color:#cc0000">Инициализация</span></p>
     <div class="row" id="nextPeriodWrap" style="display: none">
       <div class="col s12">
-        <p class="flow-text">Next Period: <span id="nextPeriodCount">00:00:00</span></p>
+        <p class="flow-text">Следующий период: <span id="nextPeriodCount">00:00:00</span></p>
       </div>
     </div>
     <hr>
     <div id="connectNewContacts" style="display:none;">
       <div class="row">
         <div class="col s12">
-          <p class="flow-text">Total Invite: <span id="TotalInvited">0</span></p>
-          <p class="flow-text">Current Period Invite: <span id="CurrentPeriodConnect">0</span></p>
+          <p class="flow-text">Всего пригласили: <span id="TotalInvited">0</span></p>
+          <p class="flow-text">Приглашений на текущий период: <span id="CurrentPeriodConnect">0</span></p>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
           <div class="input-field">
-            <label for="ConnectsPerPeriod">Connects per period</label>
+            <label for="ConnectsPerPeriod">Соединяется за период</label>
             <input type="number" id="ConnectsPerPeriod" min="1">
           </div>
         </div>
         <div class="col s6">
           <div class="input-field">
-            <label for="HoursPerPeriod">Hours per period</label>
+            <label for="HoursPerPeriod">Часов за период</label>
             <input type="number" id="HoursPerPeriod" min="1">
           </div>
         </div>
@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col s12">
           <div class="input-field">
-            <label for="note">Invitation Note (Optional)</label>
+            <label for="note">Заметка приглашения (Optional)</label>
             <textarea id="note" class="materialize-textarea"  data-length="300"></textarea>
           </div>
         </div>
@@ -44,8 +44,8 @@
       <div class="row">
         <div class="col s6">
           <div class="input-field">
-            <button class="premium-btn btn" id="btnStart" disabled>Start</button>
-            <button class="premium-btn btn" id="btnStop" disabled>Cancel</button>
+            <button class="premium-btn btn" id="btnStart" disabled>Старт</button>
+            <button class="premium-btn btn" id="btnStop" disabled>Отмена</button>
           </div>
         </div>
         <div class="col s6">
@@ -59,56 +59,56 @@
     <div id="broadcastMessage" style="display:none;">
       <div class="row">
         <div class="col s12">
-          <p class="flow-text">Total Sent: <span id="TotalSent">0</span></p>
-          <p class="flow-text">Current Period Sent: <span id="CurrentPeriodSent">0</span></p>
+          <p class="flow-text">Всего отправлено: <span id="TotalSent">0</span></p>
+          <p class="flow-text">Отправлено за период: <span id="CurrentPeriodSent">0</span></p>
         </div>
       </div>
 
       <div class="row">
         <div class="col s6">
           <div class="input-field">
-            <label for="MessagePerPeriod">Message per period</label>
+            <label for="MessagePerPeriod">Сообщений за период</label>
             <input type="number" id="MessagePerPeriod" min="1">
           </div>
         </div>
         <div class="col s6">
           <div class="input-field">
-            <label for="MessageHoursPerPeriod">Hours per period</label>
+            <label for="MessageHoursPerPeriod">Часов за период</label>
             <input type="number" id="MessageHoursPerPeriod" min="1">
           </div>
         </div>
       </div>
 
-      <label for="message">Message to broadcast</label>
+      <label for="message">Сообщение для трансляции</label>
       <textarea id="message" class="materialize-textarea"></textarea>
-      <button class="premium-btn btn" id="btnStartMsg" disabled>Start</button>
-      <button class="premium-btn btn" id="btnStopMsg" disabled>Cancel</button>
+      <button class="premium-btn btn" id="btnStartMsg" disabled>Старт</button>
+      <button class="premium-btn btn" id="btnStopMsg" disabled>Отмена</button>
     </div>
 
-    <div id="extractEmails" style="display:none;">
+  <div id="extractEmails" style="display:none;">
       <div class="row">
         <div class="col s12">
-          <p class="flow-text">Total Extracted: <span id="TotalExtracted">0</span></p>
-          <p class="flow-text">Current Period Extracted: <span id="CurrentPeriodExtracted">0</span></p>
+          <p class="flow-text">Всего собранл: <span id="TotalExtracted">0</span></p>
+          <p class="flow-text">Собрано за период: <span id="CurrentPeriodExtracted">0</span></p>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
           <div class="input-field">
-            <label for="ProfilesPerPeriod">Profiles per period</label>
+            <label for="ProfilesPerPeriod">Профилей за период</label>
             <input type="number" id="ProfilesPerPeriod" min="1">
           </div>
         </div>
         <div class="col s6">
           <div class="input-field">
-            <label for="ExtractHoursPerPeriod">Hours per period</label>
+            <label for="ExtractHoursPerPeriod">Часов в период</label>
             <input type="number" id="ExtractHoursPerPeriod" min="1">
           </div>
         </div>
       </div>
       <br>
-      <button class="premium-btn btn" id="btnStartExtract" disabled>Start</button>
-      <button class="premium-btn btn" id="btnStopExtract" disabled>Cancel</button>
+      <button class="premium-btn btn" id="btnStartExtract" disabled>Старт</button>
+      <button class="premium-btn btn" id="btnStopExtract" disabled>Отмена</button>
 
       <hr>
     </div>
@@ -117,7 +117,7 @@
       <div class="row">
         <div class="col s12">
           <input type="text" id="NewListName" placeholder="New List Name"><br><br>
-          <button class="premium-btn btn" id="btnAddList">Add New</button>
+          <button class="premium-btn btn" id="btnAddList">Добавить новый</button>
           <br><br>
           <select id="listSelector">
           </select>
