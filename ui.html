@@ -1,7 +1,9 @@
 <div style="width: 300px;position: fixed; bottom: 0; right: 0;padding:20px;z-index: 9999999;background-color: #fff">
     <select name="endMonth" id="moduleSelector" class="ember-view">
       <option value="1">Подключить новые контакты</option> 
-      <option value="2">Трансляция сообщения</option>
+      <option value="2">Трансляция сообщений</option>
+      <option value="3">Изъять почты из списка</option>
+      <option value="4">Список</option>
     </select>
     <p class="flow-text">Status: <span id="Status" style="color:#cc0000">Инициализация</span></p>
     <div class="row" id="nextPeriodWrap" style="display: none">
@@ -10,7 +12,7 @@
       </div>
     </div>
     <hr>
-    <div id="connectNewContacts">
+    <div id="connectNewContacts" style="display:none;">
       <div class="row">
         <div class="col s12">
           <p class="flow-text">Всего пригласили: <span id="TotalInvited">0</span></p>
@@ -34,7 +36,7 @@
       <div class="row">
         <div class="col s12">
           <div class="input-field">
-            <label for="note">ЗАметка приглашения (Optional)</label>
+            <label for="note">Заметка приглашения (Optional)</label>
             <textarea id="note" class="materialize-textarea"  data-length="300"></textarea>
           </div>
         </div>
@@ -81,5 +83,45 @@
       <textarea id="message" class="materialize-textarea"></textarea>
       <button class="premium-btn btn" id="btnStartMsg" disabled>Старт</button>
       <button class="premium-btn btn" id="btnStopMsg" disabled>Отмена</button>
+    </div>
+
+  <div id="extractEmails" style="display:none;">
+      <div class="row">
+        <div class="col s12">
+          <p class="flow-text">Всего собранл: <span id="TotalExtracted">0</span></p>
+          <p class="flow-text">Собрано за период: <span id="CurrentPeriodExtracted">0</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <label for="ProfilesPerPeriod">Профилей за период</label>
+            <input type="number" id="ProfilesPerPeriod" min="1">
+          </div>
+        </div>
+        <div class="col s6">
+          <div class="input-field">
+            <label for="ExtractHoursPerPeriod">Часов в период</label>
+            <input type="number" id="ExtractHoursPerPeriod" min="1">
+          </div>
+        </div>
+      </div>
+      <br>
+      <button class="premium-btn btn" id="btnStartExtract" disabled>Старт</button>
+      <button class="premium-btn btn" id="btnStopExtract" disabled>Отмена</button>
+
+      <hr>
+    </div>
+
+    <div id="lists">
+      <div class="row">
+        <div class="col s12">
+          <input type="text" id="NewListName" placeholder="New List Name"><br><br>
+          <button class="premium-btn btn" id="btnAddList">Добавить новый</button>
+          <br><br>
+          <select id="listSelector">
+          </select>
+        </div>
+      </div>
     </div>
 </div>
